@@ -1,0 +1,20 @@
+package main
+
+var count int = 100_000
+func addition(m map[int]int) map[int]int {
+	for i := 0; i < count; i++ {
+		m[i] = i
+	}
+	return m
+}
+
+func main() {
+	for i := 0; i < 4; i++ {
+		println("round ",i )
+		n := make(map[int]int, count)
+		addition(n)
+		println("0 size map\n")
+		m := make(map[int]int)
+		addition(m)
+	}
+}
